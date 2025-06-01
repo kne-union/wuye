@@ -7,6 +7,9 @@ const loadableWithProps = func =>
   });
 
 const pages = {
+  Admin: loadableWithProps(() => import('./Admin')),
+  InitAdmin: loadableWithProps(() => import('./Admin').then(({ InitAdmin }) => InitAdmin)),
+  Account: loadableWithProps(() => import('./Account')),
   Home: loadableWithProps(() => import('./Home')),
   Error: loadableWithProps(() => import('./Error')),
   NotFound: loadableWithProps(() => import('./NotFound'))

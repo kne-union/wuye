@@ -2,8 +2,9 @@ import React from 'react';
 import { preset as fetchPreset } from '@kne/react-fetch';
 import { Spin, Empty, message } from 'antd';
 import createAjax from '@kne/axios-fetch';
-import { preset as remoteLoaderPreset } from '@kne/remote-loader';
+import { preset as remoteLoaderPreset, loadModule } from '@kne/remote-loader';
 import { getApis } from '@components/Apis';
+import { getToken } from '@kne/token-storage';
 
 window.PUBLIC_URL = window.runtimePublicUrl || process.env.PUBLIC_URL;
 
@@ -13,10 +14,24 @@ export const globalInit = async () => {
   const ajax = createAjax({
     baseUrl: baseApiUrl,
     getDefaultHeaders: () => {
-      //这里设置获取token方法
-      return {};
+      return {
+        'X-User-Token': getToken('X-User-Token'),
+        'X-User-Code': getToken('X-User-Code')
+      };
     },
-    errorHandler: error => message.error(error)
+    errorHandler: error => message.error(error),
+    registerInterceptors: interceptors => {
+      interceptors.response.use(response => {
+        if (response.status === 401 || response.data.code === 401) {
+          const searchParams = new URLSearchParams(window.location.search);
+          const referer = encodeURIComponent(window.location.pathname + window.location.search);
+          searchParams.append('referer', referer);
+          window.location.href = '/account/login?' + searchParams.toString();
+          response.showError = false;
+        }
+        return response;
+      });
+    }
   });
   fetchPreset({
     ajax,
@@ -62,6 +77,25 @@ export const globalInit = async () => {
         remote: 'components-iconfont',
         defaultVersion: '0.2.1'
       },
+      'components-file-manager': {
+        ...registry,
+        remote: 'components-file-manager',
+        defaultVersion: '0.1.1'
+      },
+      'components-signature': {
+        ...registry,
+        //url: 'http://localhost:3012',
+        //tpl: '{{url}}',
+        remote: 'components-signature',
+        defaultVersion: '0.1.0'
+      },
+      'components-admin': {
+        ...registry,
+        //url: 'http://localhost:3016',
+        //tpl: '{{url}}',
+        remote: 'components-admin',
+        defaultVersion: '1.0.2'
+      },
       wuye:
         process.env.NODE_ENV === 'development'
           ? {
@@ -77,8 +111,35 @@ export const globalInit = async () => {
     }
   });
 
+  const getAccountApis = await loadModule('components-admin:Apis@getApis').then(({ default: defaultModule }) => defaultModule);
+  const getFileManagerApis = await loadModule('components-file-manager:Apis@getApis').then(({ default: defaultModule }) => defaultModule);
+  const getSignatureApis = await loadModule('components-signature:Apis@getApis').then(({ default: defaultModule }) => defaultModule);
+
   return {
     ajax,
-    apis: Object.assign({}, getApis())
+    apis: Object.assign(
+      {},
+      getAccountApis(),
+      {
+        fileManager: getFileManagerApis(),
+        signature: getSignatureApis({ prefix: '/api/v1/signature' }),
+        file: {
+          contentWindowUrl: 'https://uc.fatalent.cn/components/@kne/iframe-resizer/0.1.3/dist/contentWindow.js',
+          pdfjsUrl: 'https://cdn.leapin-ai.com/components/pdfjs-dist/4.4.168',
+          getUrl: {
+            url: `/api/v1/static/file-url/{id}`,
+            paramsType: 'urlParams',
+            ignoreSuccessState: true
+          },
+          upload: ({ file }) => {
+            return ajax.postForm({
+              url: `/api/v1/static/upload`,
+              data: { file }
+            });
+          }
+        }
+      },
+      getApis()
+    )
   };
 };
