@@ -6,17 +6,17 @@ import './index.scss';
 const { Account, Admin, InitAdmin, Home, Error, NotFound } = pages;
 
 const App = createWithRemoteLoader({
-  modules: ['components-core:Global', 'components-admin:Authenticate@BeforeLoginLayout', 'components-admin:Authenticate@AfterUserLogin', 'components-admin:Authenticate@AfterAdminUserLoginLayout']
+  modules: ['components-core:Global', 'components-admin:Authenticate@BeforeLoginLayout', 'components-admin:Authenticate@AfterUserLoginLayout', 'components-admin:Authenticate@AfterAdminUserLoginLayout']
 })(({ remoteModules, globalPreset }) => {
-  const [Global, BeforeLoginLayout, AfterUserLogin, AfterAdminUserLoginLayout] = remoteModules;
+  const [Global, BeforeLoginLayout, AfterUserLoginLayout, AfterAdminUserLoginLayout] = remoteModules;
   const baseUrl = '';
   return (
     <Global preset={globalPreset} themeToken={globalPreset.themeToken}>
       <Routes>
-        <Route element={<AfterUserLogin baseUrl={baseUrl} />}>
+        <Route element={<AfterUserLoginLayout baseUrl={baseUrl} />}>
           <Route index element={<Home />} />
         </Route>
-        <Route path="admin/initAdmin" element={<AfterUserLogin />}>
+        <Route path="admin/initAdmin" element={<AfterUserLoginLayout />}>
           <Route index element={<InitAdmin baseUrl={`${baseUrl}/admin`} />} />
         </Route>
         <Route
