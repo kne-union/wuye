@@ -13,6 +13,7 @@
     "deploy": "cross-env OUTPUT_HTML_PATH=build/entry.html DEPLOY_URL=https://cdn.leapin-ai.com/projects/video-conference API_URL=https://api.gw.leapin-ai.com/api/video-conference npx @kne/npm-tools entryHtml",
     "deploy-ap": "cross-env OUTPUT_HTML_PATH=build/entry-ap.html DEPLOY_URL=https://cdn.leapin-ai.com/projects/video-conference API_URL=https://api.gw.leapin-ai.com/api/video-conference npx @kne/npm-tools entryHtml",
     "create": "modules-dev-create",
+    "create-biz": "modules-dev-create --template @kne-template/components-biz",
     "test": "craco test --coverage",
     "eject": "react-scripts eject",
     "prettier": "prettier --config .prettierrc --write 'src/**/*.{js,jsx,ts,tsx,json,css,scss}'",
@@ -91,6 +92,7 @@
     "sass": "^1.75.0"
   },
   "dependencies": {
+    "@ant-design/icons": "^6.0.0",
     "@kne/token-storage": "^1.0.0"
   }
 }
