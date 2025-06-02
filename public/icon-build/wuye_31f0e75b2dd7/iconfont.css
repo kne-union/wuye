@@ -1,14 +1,13 @@
 @font-face {
-  font-family: 'iconfont-wuye'; /* Project id 4937901 */
-  src:
-    url('iconfont.woff2?t=1748855839169') format('woff2'),
-    url('iconfont.woff?t=1748855839169') format('woff'),
-    url('iconfont.ttf?t=1748855839169') format('truetype'),
-    url('iconfont.svg?t=1748855839169#iconfont-wuye') format('svg');
+  font-family: "iconfont-wuye"; /* Project id 4937901 */
+  src: url('iconfont.woff2?t=1748855839169') format('woff2'),
+       url('iconfont.woff?t=1748855839169') format('woff'),
+       url('iconfont.ttf?t=1748855839169') format('truetype'),
+       url('iconfont.svg?t=1748855839169#iconfont-wuye') format('svg');
 }
 
 .iconfont-wuye {
-  font-family: 'iconfont-wuye' !important;
+  font-family: "iconfont-wuye" !important;
   font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
@@ -16,253 +15,254 @@
 }
 
 .icon-judge:before {
-  content: '\e635';
+  content: "\e635";
 }
 
 .icon-omit:before {
-  content: '\e636';
+  content: "\e636";
 }
 
 .icon-meeting:before {
-  content: '\e637';
+  content: "\e637";
 }
 
 .icon-hr:before {
-  content: '\e639';
+  content: "\e639";
 }
 
 .icon-struct:before {
-  content: '\e63a';
+  content: "\e63a";
 }
 
 .icon-lamp:before {
-  content: '\e63b';
+  content: "\e63b";
 }
 
 .icon-pet:before {
-  content: '\e63c';
+  content: "\e63c";
 }
 
 .icon-sign:before {
-  content: '\e63d';
+  content: "\e63d";
 }
 
 .icon-topic:before {
-  content: '\e63e';
+  content: "\e63e";
 }
 
 .icon-question:before {
-  content: '\e63f';
+  content: "\e63f";
 }
 
 .icon-order:before {
-  content: '\e640';
+  content: "\e640";
 }
 
 .icon-setting:before {
-  content: '\e641';
+  content: "\e641";
 }
 
 .icon-update:before {
-  content: '\e642';
+  content: "\e642";
 }
 
 .icon-energy:before {
-  content: '\e62a';
+  content: "\e62a";
 }
 
 .icon-my-mission:before {
-  content: '\e62b';
+  content: "\e62b";
 }
 
 .icon-elevator:before {
-  content: '\e62c';
+  content: "\e62c";
 }
 
 .icon-report:before {
-  content: '\e62d';
+  content: "\e62d";
 }
 
 .icon-home:before {
-  content: '\e62e';
+  content: "\e62e";
 }
 
 .icon-notice:before {
-  content: '\e62f';
+  content: "\e62f";
 }
 
 .icon-pledge:before {
-  content: '\e630';
+  content: "\e630";
 }
 
 .icon-leave:before {
-  content: '\e631';
+  content: "\e631";
 }
 
 .icon-all-mission:before {
-  content: '\e632';
+  content: "\e632";
 }
 
 .icon-monitor:before {
-  content: '\e633';
+  content: "\e633";
 }
 
 .icon-finance:before {
-  content: '\e634';
+  content: "\e634";
 }
 
 .icon-iot:before {
-  content: '\e621';
+  content: "\e621";
 }
 
 .icon-bussinese:before {
-  content: '\e622';
+  content: "\e622";
 }
 
 .icon-park:before {
-  content: '\e623';
+  content: "\e623";
 }
 
 .icon-more:before {
-  content: '\e624';
+  content: "\e624";
 }
 
 .icon-menu-fold:before {
-  content: '\e625';
+  content: "\e625";
 }
 
 .icon-inform:before {
-  content: '\e626';
+  content: "\e626";
 }
 
 .icon-notication:before {
-  content: '\e627';
+  content: "\e627";
 }
 
 .icon-service:before {
-  content: '\e628';
+  content: "\e628";
 }
 
 .icon-contract:before {
-  content: '\e629';
+  content: "\e629";
 }
 
 .icon-entrance:before {
-  content: '\e61f';
+  content: "\e61f";
 }
 
 .icon-dashboard:before {
-  content: '\e620';
+  content: "\e620";
 }
 
 .icon-xgfy:before {
-  content: '\e61a';
+  content: "\e61a";
 }
 
 .icon-statistic:before {
-  content: '\e61b';
+  content: "\e61b";
 }
 
 .icon-maintain:before {
-  content: '\e61c';
+  content: "\e61c";
 }
 
 .icon-payment:before {
-  content: '\e61d';
+  content: "\e61d";
 }
 
 .icon-vistor:before {
-  content: '\e61e';
+  content: "\e61e";
 }
 
 .icon-charging:before {
-  content: '\e609';
+  content: "\e609";
 }
 
 .icon-full-screen:before {
-  content: '\e60a';
+  content: "\e60a";
 }
 
 .icon-exit-full-screen:before {
-  content: '\e604';
+  content: "\e604";
 }
 
 .icon-warning:before {
-  content: '\e60b';
+  content: "\e60b";
 }
 
 .icon-screen:before {
-  content: '\e603';
+  content: "\e603";
 }
 
 .icon-community:before {
-  content: '\e60c';
+  content: "\e60c";
 }
 
 .icon-meeting-create:before {
-  content: '\e60d';
+  content: "\e60d";
 }
 
 .icon-wechat:before {
-  content: '\e60e';
+  content: "\e60e";
 }
 
 .icon-menu-unfold:before {
-  content: '\e60f';
+  content: "\e60f";
 }
 
 .icon-meeting-participant:before {
-  content: '\e610';
+  content: "\e610";
 }
 
 .icon-fitment:before {
-  content: '\e611';
+  content: "\e611";
 }
 
 .icon-promise:before {
-  content: '\e612';
+  content: "\e612";
 }
 
 .icon-oa:before {
-  content: '\e613';
+  content: "\e613";
 }
 
 .icon-warehouse:before {
-  content: '\e614';
+  content: "\e614";
 }
 
 .icon-movecar:before {
-  content: '\e615';
+  content: "\e615";
 }
 
 .icon-mission:before {
-  content: '\e616';
+  content: "\e616";
 }
 
 .icon-refound:before {
-  content: '\e617';
+  content: "\e617";
 }
 
 .icon-refresh:before {
-  content: '\e618';
+  content: "\e618";
 }
 
 .icon-ower:before {
-  content: '\e619';
+  content: "\e619";
 }
 
 .icon-dispose-mission:before {
-  content: '\e607';
+  content: "\e607";
 }
 
 .icon-address:before {
-  content: '\e608';
+  content: "\e608";
 }
 
 .icon-flow:before {
-  content: '\e605';
+  content: "\e605";
 }
 
 .icon-approver:before {
-  content: '\e606';
+  content: "\e606";
 }
+

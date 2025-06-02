@@ -1,14 +1,16 @@
 import RemoteLoader, { createWithRemoteLoader } from '@kne/remote-loader';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import FontLoader from '@components/Font';
+import { Flex } from 'antd';
 import pages from './pages';
 import './index.scss';
 
 const { Account, Admin, InitAdmin, Basic, Finance, MyWork, Setting, Error, NotFound } = pages;
 
 const App = createWithRemoteLoader({
-  modules: ['components-core:Global', 'components-admin:Authenticate@BeforeLoginLayout', 'components-admin:Authenticate@AfterUserLoginLayout', 'components-admin:Authenticate@AfterAdminUserLoginLayout']
+  modules: ['components-core:Global', 'components-admin:Authenticate@BeforeLoginLayout', 'components-admin:Authenticate@AfterUserLoginLayout', 'components-admin:Authenticate@AfterAdminUserLoginLayout', 'components-core:Icon']
 })(({ remoteModules, globalPreset }) => {
-  const [Global, BeforeLoginLayout, AfterUserLoginLayout, AfterAdminUserLoginLayout] = remoteModules;
+  const [Global, BeforeLoginLayout, AfterUserLoginLayout, AfterAdminUserLoginLayout, Icon] = remoteModules;
   const baseUrl = '';
   return (
     <Global preset={globalPreset} themeToken={globalPreset.themeToken}>
@@ -22,21 +24,25 @@ const App = createWithRemoteLoader({
                 list: [
                   {
                     key: 'basic',
+                    icon: <Icon type="service" fontClassName="iconfont-wuye" />,
                     title: '物业服务',
                     path: '/basic'
                   },
                   {
                     key: 'oa',
+                    icon: <Icon type="oa" fontClassName="iconfont-wuye" />,
                     title: '协同办公',
                     path: '/oa'
                   },
                   {
                     key: 'finance',
+                    icon: <Icon type="finance" fontClassName="iconfont-wuye" />,
                     title: '财务管理',
                     path: '/finance'
                   },
                   {
                     key: 'setting',
+                    icon: <Icon type="setting" fontClassName="iconfont-wuye" />,
                     title: '设置',
                     path: '/setting'
                   }
@@ -92,6 +98,7 @@ const App = createWithRemoteLoader({
           <Route path="account/*" element={<Account baseUrl={baseUrl + '/account'} />} />
         </Route>
       </Routes>
+      <FontLoader />
     </Global>
   );
 });
