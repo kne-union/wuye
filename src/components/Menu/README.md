@@ -16,9 +16,9 @@
 - _Menu(@components/Menu)
 
 ```jsx
-const {default:Menu} = _Menu;
-const BaseExample = ()=>{
-    return <Menu />;
+const { default: Menu } = _Menu;
+const BaseExample = () => {
+  return <Menu />;
 };
 
 render(<BaseExample />);
