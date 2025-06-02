@@ -9,7 +9,7 @@ const App = createWithRemoteLoader({
   modules: ['components-core:Global', 'components-admin:Authenticate@BeforeLoginLayout', 'components-admin:Authenticate@AfterUserLoginLayout', 'components-admin:Authenticate@AfterAdminUserLoginLayout']
 })(({ remoteModules, globalPreset }) => {
   const [Global, BeforeLoginLayout, AfterUserLoginLayout, AfterAdminUserLoginLayout] = remoteModules;
-  const baseUrl = '/';
+  const baseUrl = '';
   return (
     <Global preset={globalPreset} themeToken={globalPreset.themeToken}>
       <Routes>
