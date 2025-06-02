@@ -3,18 +3,53 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import pages from './pages';
 import './index.scss';
 
-const { Account, Admin, InitAdmin, Home, Error, NotFound } = pages;
+const { Account, Admin, InitAdmin, Basic, Finance, MyWork, Setting, Error, NotFound } = pages;
 
 const App = createWithRemoteLoader({
   modules: ['components-core:Global', 'components-admin:Authenticate@BeforeLoginLayout', 'components-admin:Authenticate@AfterUserLoginLayout', 'components-admin:Authenticate@AfterAdminUserLoginLayout']
 })(({ remoteModules, globalPreset }) => {
   const [Global, BeforeLoginLayout, AfterUserLoginLayout, AfterAdminUserLoginLayout] = remoteModules;
-  const baseUrl = '';
+  const baseUrl = '/';
   return (
     <Global preset={globalPreset} themeToken={globalPreset.themeToken}>
       <Routes>
-        <Route element={<AfterUserLoginLayout baseUrl={baseUrl} />}>
-          <Route index element={<Home />} />
+        <Route
+          element={
+            <AfterUserLoginLayout
+              baseUrl={baseUrl}
+              navigation={{
+                showIndex: false,
+                list: [
+                  {
+                    key: 'basic',
+                    title: '物业服务',
+                    path: '/basic'
+                  },
+                  {
+                    key: 'oa',
+                    title: '我的工作',
+                    path: '/oa'
+                  },
+                  {
+                    key: 'finance',
+                    title: '财务管理',
+                    path: '/finance'
+                  },
+                  {
+                    key: 'setting',
+                    title: '设置',
+                    path: '/setting'
+                  }
+                ]
+              }}
+            />
+          }
+        >
+          <Route index element={<Navigate to="/basic" />} />
+          <Route path="basic/*" element={<Basic />} />
+          <Route path="oa/*" element={<MyWork />} />
+          <Route path="finance/*" element={<Finance />} />
+          <Route path="setting/*" element={<Setting />} />
         </Route>
         <Route path="admin/initAdmin" element={<AfterUserLoginLayout />}>
           <Route index element={<InitAdmin baseUrl={`${baseUrl}/admin`} />} />
