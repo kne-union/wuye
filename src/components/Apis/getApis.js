@@ -7,7 +7,19 @@ const getApis = options => {
     options
   );
 
-  return {};
+  return {
+    community: {
+      getList: {
+        loader: () => {
+          return {
+            totalCount: 0,
+            pageData: []
+          };
+        }
+      },
+      create: {}
+    }
+  };
 };
 
 export default getApis;
