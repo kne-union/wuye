@@ -27,7 +27,7 @@ const App = createWithRemoteLoader({
                   },
                   {
                     key: 'oa',
-                    title: '我的工作',
+                    title: '协同办公',
                     path: '/oa'
                   },
                   {
