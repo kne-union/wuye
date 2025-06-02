@@ -1,0 +1,128 @@
+@font-face {
+  font-family: 'iconfont-wuye'; /* Project id 4937901 */
+  src:
+    url('iconfont.woff2?t=1748835662351') format('woff2'),
+    url('iconfont.woff?t=1748835662351') format('woff'),
+    url('iconfont.ttf?t=1748835662351') format('truetype'),
+    url('iconfont.svg?t=1748835662351#iconfont-wuye') format('svg');
+}
+
+.iconfont-wuye {
+  font-family: 'iconfont-wuye' !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xgfy:before {
+  content: '\e61a';
+}
+
+.icon-statistic:before {
+  content: '\e61b';
+}
+
+.icon-maintain:before {
+  content: '\e61c';
+}
+
+.icon-payment:before {
+  content: '\e61d';
+}
+
+.icon-vistor:before {
+  content: '\e61e';
+}
+
+.icon-charging:before {
+  content: '\e609';
+}
+
+.icon-full-screen:before {
+  content: '\e60a';
+}
+
+.icon-exit-full-screen:before {
+  content: '\e604';
+}
+
+.icon-warning:before {
+  content: '\e60b';
+}
+
+.icon-screen:before {
+  content: '\e603';
+}
+
+.icon-community:before {
+  content: '\e60c';
+}
+
+.icon-meeting-create:before {
+  content: '\e60d';
+}
+
+.icon-wechat:before {
+  content: '\e60e';
+}
+
+.icon-menu-unfold:before {
+  content: '\e60f';
+}
+
+.icon-meeting-participant:before {
+  content: '\e610';
+}
+
+.icon-fitment:before {
+  content: '\e611';
+}
+
+.icon-promise:before {
+  content: '\e612';
+}
+
+.icon-oa:before {
+  content: '\e613';
+}
+
+.icon-warehouse:before {
+  content: '\e614';
+}
+
+.icon-movecar:before {
+  content: '\e615';
+}
+
+.icon-mission:before {
+  content: '\e616';
+}
+
+.icon-refound:before {
+  content: '\e617';
+}
+
+.icon-refresh:before {
+  content: '\e618';
+}
+
+.icon-ower:before {
+  content: '\e619';
+}
+
+.icon-dispose-mission:before {
+  content: '\e607';
+}
+
+.icon-address:before {
+  content: '\e608';
+}
+
+.icon-flow:before {
+  content: '\e605';
+}
+
+.icon-approver:before {
+  content: '\e606';
+}
